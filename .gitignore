@@ -1009,3 +1009,4 @@ cython_debug/
 .idea
 
 postgres-data/
+*.duckdb
