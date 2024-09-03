@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-echo "Superset is initialized because the database file does not exist..."
-
 superset fab create-admin \
               --username "admin" \
               --password "admin" \

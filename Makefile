@@ -2,19 +2,11 @@
 # COMMANDS                                                                      #
 #################################################################################
 .PHONY: run_dev
-run_dev:
+run_dbt_dev:
 	@set -a && . mlb_dbt/.env && set +a && cd mlb_dbt && dbt run --target dev
 
-## Create a virtual environment
-.PHONY: build_and_run
-build_and_run:
-	@docker build -t superset --target superset . --build-arg SUPERSET_ADMIN=admin --build-arg SUPERSET_PASSWORD=password
-	@docker run --name superset superset
+.PHONY: run_prod
+run_dbt_prod:
+	@set -a && . mlb_dbt/.env && set +a && cd mlb_dbt && dbt run --target prod
 
-.PHONY: run
-run:
-	@docker run --name superset superset
 
-.PHONY: stop
-stop:
-	@docker stop superset

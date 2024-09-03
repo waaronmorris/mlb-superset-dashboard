@@ -26,7 +26,6 @@ CACHE_CONFIG = {
 DATA_CACHE_CONFIG = CACHE_CONFIG
 
 SQLALCHEMY_DATABASE_URI = f"postgresql://{env('DB_USER')}:{env('DB_PASS')}@{env('DB_HOST')}/{env('DB_NAME')}"
-print(SQLALCHEMY_DATABASE_URI)
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 # class CeleryConfig(object):
