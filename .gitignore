@@ -364,7 +364,7 @@ override.tf.json
 # !example_override.tf
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
-# example: *tfplan*
+# mlb_api: *tfplan*
 
 # Ignore CLI configuration files
 .terraformrc
@@ -1007,3 +1007,5 @@ cython_debug/
 */logs/
 
 .idea
+
+postgres-data/
