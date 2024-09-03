@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: mlb_stats
+    meta:
+      external_location: "r2://mlb-stats/{name}.parquet"
+    tables:
+      - name: box_score
+        meta:
+          folder: ""

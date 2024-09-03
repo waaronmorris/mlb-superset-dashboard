@@ -1,0 +1,27 @@
+mlb_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'dev.duckdb'
+      threads: 24
+      extensions:
+        - httpfs
+        - parquet
+      secrets:
+        - type: r2
+          key_id: "{{ env_var('CLOUDFLARE_CLIENT_ACCESS_KEY') }}"
+          secret: "{{ env_var('CLOUDFLARE_CLIENT_SECRET') }}"
+          account_id: "{{ env_var('CLOUDFLARE_ACCOUNT_ID') }}"
+    production:
+      type: duckdb
+      path: 'mlb.duckdb'
+      threads: 24
+      extensions:
+        - httpfs
+        - parquet
+      secrets:
+        - type: r2
+          key_id: "{{ env_var('CLOUDFLARE_CLIENT_ACCESS_KEY') }}"
+          secret: "{{ env_var('CLOUDFLARE_CLIENT_SECRET') }}"
+          account_id: "{{ env_var('CLOUDFLARE_ACCOUNT_ID') }}"

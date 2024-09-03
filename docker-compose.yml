@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  superset_redis:
+    container_name: superset_redis
+    image: redis
+    restart: always
+    networks:
+      - superset_network
+    volumes:
+      - redis:/data
+
+  superset_postgres:
+    image: postgres:11
+    container_name: superset_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - /tmp/postgres:/var/lib/postgresql/data
+      - /tmp/io_manager_storage:/tmp/io_manager_storage
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - superset_network
+
+  superset:
+    container_name: superset
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: superset
+      args:
+        SUPERSET_ADMIN_USER: ${SUPERSET_ADMIN_USER}
+        SUPERSET_PASSWORD: ${SUPERSET_PASSWORD}
+        CLOUDFLARE_BUCKET: ${CLOUDFLARE_BUCKET}
+        CLOUDFLARE_ACCOUNT_ID: ${CLOUDFLARE_ACCOUNT_ID}
+        CLOUDFLARE_CLIENT_ACCESS_KEY: ${CLOUDFLARE_CLIENT_ACCESS_KEY}
+        CLOUDFLARE_CLIENT_SECRET: ${CLOUDFLARE_CLIENT_SECRET}
+        CLOUDFLARE_TOKEN_VALUE: ${CLOUDFLARE_TOKEN_VALUE}
+    environment:
+      SUPERSET_ENV: "local"
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
+      RECAPTCHA_PUBLIC_KEY: ${RECAPTCHA_PUBLIC_KEY}
+      GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS}
+      DUCKDB_DATABASE: ${DUCKDB_DATABASE}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+    networks:
+      - superset_network
+    depends_on:
+      - superset_postgres
+      - superset_redis
+
+volumes:
+  redis:
+    external: false
+  postgres-data:
+    external: false
+
+networks:
+  superset_network:
+    driver: bridge
+    name: superset_network

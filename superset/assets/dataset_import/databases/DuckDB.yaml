@@ -1,0 +1,16 @@
+database_name: DuckDB
+sqlalchemy_uri: duckdb:////app/superset_home/mlb.duckdb
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: false
+extra:
+  allows_virtual_table_explore: true
+  engine_params:
+    connect_args:
+      read_only: 1
+uuid: e644ce55-2ae8-4c38-b38b-2f1b2f6c8613
+version: 1.0.0
