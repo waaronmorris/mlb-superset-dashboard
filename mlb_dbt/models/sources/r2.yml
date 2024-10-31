@@ -5,6 +5,10 @@ sources:
     meta:
       external_location: "r2://mlb-stats/{name}.parquet"
     tables:
-      - name: box_score
+      - name: fantasy_box_scores
         meta:
-          folder: ""
+          folder: "stage/mlb"
+          external_location: "r2://mlb-stats/refined/fantasy_box_scores.parquet"
+
+
+

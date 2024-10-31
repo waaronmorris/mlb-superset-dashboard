@@ -5,7 +5,7 @@ default_endpoint: null
 offset: 0
 cache_timeout: null
 schema: mlb.main
-sql: null
+sql: ''
 params: null
 template_params: null
 filter_select_enabled: true
@@ -15,20 +15,1045 @@ normalize_columns: false
 always_filter_main_dttm: false
 uuid: 80223bcc-e5e5-43d6-b3ef-8bf0b0d9c884
 metrics:
-- metric_name: count
-  verbose_name: COUNT(*)
-  metric_type: count
-  expression: COUNT(*)
-  description: null
-  d3format: null
-  currency: null
-  extra: null
-  warning_text: null
+  - metric_name: ab_points
+    verbose_name: Points - Batting - At Bats
+    metric_type: null
+    expression: SUM(ab_points)
+    description: Points (Negative) given for At Bats
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: h_points
+    verbose_name: Points - Batting Hits
+    metric_type: null
+    expression: SUM(h_points)
+    description: Points (Positive) given for Hits
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: doubles_points
+    verbose_name: Points - Batting -  Doubles
+    metric_type: null
+    expression: SUM(doubles_points)
+    description: Points (Positive) given for Doubles
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: triples_points
+    verbose_name: Points - Batting - Triples
+    metric_type: null
+    expression: SUM(triples_points)
+    description: Points (Positive) given for Triples
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: home_runs_points
+    verbose_name: Points - Batting - Home Runs
+    metric_type: null
+    expression: SUM(home_runs_points)
+    description: Points (Positive) given for Home Runs
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: walks_points
+    verbose_name: Points - Batting - Walks
+    metric_type: null
+    expression: SUM(walks_points)
+    description: Points (Positive) given for Walks by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: hit_by_pitch
+    verbose_name: Points - Hit By Pitch
+    metric_type: null
+    expression: SUM(hit_by_pitch)
+    description: Points (Positive) given for Hits By Pitch (HBP)
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: stolen_bases
+    verbose_name: Points - Stolen Bases
+    metric_type: null
+    expression: SUM(stolen_bases)
+    description: Points (Negative) given for Stolen Bases by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: caught_stealing
+    verbose_name: Points - Caught Stealing
+    metric_type: null
+    expression: SUM(caught_stealing)
+    description: Points (Negative) given for Caught Stealing by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: innings_pitched
+    verbose_name: Points - Innings Pitched
+    metric_type: null
+    expression: SUM(innings_pitched)
+    description: Points (Positive) given for Innings Pitched by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: strikeouts_points
+    verbose_name: Points - Strikeouts
+    metric_type: null
+    expression: SUM(strikeouts_points)
+    description: Points (Positive) given for Strikeouts by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: walks_pitched_points
+    verbose_name: Points - Walks Pitched
+    metric_type: null
+    expression: SUM(walks_pitched_points)
+    description: Points (Negative) given for Walks Pitched by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: hits_batsmen_points
+    verbose_name: Points - Hit Batsmen
+    metric_type: null
+    expression: SUM(hits_batsmen_points)
+    description: Points (Negative) given for Hitting a Batsman
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: home_runs_allowed_points
+    verbose_name: Points - Home Runs Allowed
+    metric_type: null
+    expression: SUM(home_runs_allowed_points)
+    description: Points (Negative) given for Home Runs Allowed by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: saves_points
+    verbose_name: Points - Saves
+    metric_type: null
+    expression: SUM(saves_points)
+    description: Points (Positive) given for Saves by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: holds_points
+    verbose_name: Points - Holds
+    metric_type: null
+    expression: SUM(holds_points)
+    description: Points (Positive) given for Holds by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: total_points
+    verbose_name: Points - Total
+    metric_type: null
+    expression: SUM(total_points)
+    description: Total Points for the Player
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_innings_pitched
+    verbose_name: Stats - Pitching - Innings Pitched
+    metric_type: null
+    expression: SUM(pitching_innings_pitched)
+    description: Number Of Innings Pitched by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: batting_ground_into_double_play
+    verbose_name: Stats - Batting - Ground Into Double Play
+    metric_type: null
+    expression: SUM(batting_ground_into_double_play)
+    description: Number of Double Plays by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: batting_ground_into_triple_play
+    verbose_name: Stats - Batting - Ground Into Triple Play
+    metric_type: null
+    expression: SUM(batting_ground_into_triple_play)
+    description: Number of Triple Plays by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+  - metric_name: batting_ground_into_quadruple_play
+    verbose_name: Stats - Batting - Ground Into Quadruple Play
+    metric_type: null
+    expression: SUM(batting_ground_into_quadruple_play)
+    description: Number of Quadruple Plays by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_base_on_balls
+    verbose_name: Stats - Batting - Base On Balls
+    metric_type: null
+    expression: SUM(batting_base_on_balls)
+    description: Number of Bases On Balls by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_base_on_balls
+    verbose_name: Stats - Pitching - Base On Balls
+    metric_type: null
+    expression: SUM(pitching_base_on_balls)
+    description: Number of Bases On Balls by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_left_on_base
+    verbose_name: Stats - Batting - Left On Base
+    metric_type: null
+    expression: SUM(batting_left_on_base)
+    description: Number of Left On Bases by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_hit_by_pitch
+    verbose_name: Stats - Batting - Hit By Pitch
+    metric_type: null
+    expression: SUM(batting_hit_by_pitch)
+    description: Number of Hits By Pitch by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_number_of_pitches
+    verbose_name: Stats - Pitching - Number Of Pitches
+    metric_type: null
+    expression: SUM(pitching_number_of_pitches)
+    description: Number of Pitches by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_hit_by_pitch
+    verbose_name: Stats - Pitching - Hit By Pitch
+    metric_type: null
+    expression: SUM(pitching_hit_by_pitch)
+    description: Number of Hits By Pitch by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_inherited_runners_scored
+    verbose_name: Stats - Pitching - Inherited Runners Scored
+    metric_type: null
+    expression: SUM(pitching_inherited_runners_scored)
+    description: Number of Inherited Runners Scored by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_plate_appearances
+    verbose_name: Stats - Batting - Plate Appearances
+    metric_type: null
+    expression: SUM(batting_plate_appearances)
+    description: Number of Plate Appearances by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_total_bases
+    verbose_name: Stats - Batting - Total Bases
+    metric_type: null
+    expression: SUM(batting_total_bases)
+    description: Number of Total Bases by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_at_bats
+    verbose_name: Stats - Batting - At Bats
+    metric_type: null
+    expression: SUM(batting_at_bats)
+    description: Number of At Bats by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_caught_stealing
+    verbose_name: Stats - Batting - Caught Stealing
+    metric_type: null
+    expression: SUM(batting_caught_stealing)
+    description: Number of Caught Stealing by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_games_played
+    verbose_name: Stats - Batting - Games Played
+    metric_type: null
+    expression: SUM(batting_games_played)
+    description: Number of Games Played by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_intentional_walks
+    verbose_name: Stats - Batting - Intensional Walks
+    metric_type: null
+    expression: SUM(batting_intentional_walks)
+    description: Number of Intensional Walks by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_sac_bunts
+    verbose_name: Stats - Batting - Sac Bunts
+    metric_type: null
+    expression: SUM(batting_sac_bunts)
+    description: Number of Sac Bunts by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_stolen_bases
+    verbose_name: Stats - Batting - Stolen Bases
+    metric_type: null
+    expression: SUM(batting_stolen_bases)
+    description: Number of Stolen Bases by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_catchers_interference
+    verbose_name: Stats - Batting - Catchers Interference
+    metric_type: null
+    expression: SUM(batting_catchers_interference)
+    description: Number of Catchers Interference by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_batters_faced
+    verbose_name: Stats - Pitching - Batters Faced
+    metric_type: null
+    expression: SUM(pitching_batters_faced)
+    description: Number of Batters Faced by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_passed_ball
+    verbose_name: Stats - Pitching - Passed Ball
+    metric_type: null
+    expression: SUM(pitching_passed_ball)
+    description: Number of Passed Balls by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_sac_flies
+    verbose_name: Stats - Batting - Sac Flies
+    metric_type: null
+    expression: SUM(batting_sac_flies)
+    description: Number of Sac Flies by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_at_bats
+    verbose_name: Stats - Pitching - At Bats
+    metric_type: null
+    expression: SUM(pitching_at_bats)
+    description: Number of At Bats by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_passed_ball
+    verbose_name: Stats - Fielding - Passed Ball
+    metric_type: null
+    expression: SUM(fielding_passed_ball)
+    description: Number of Passed Balls by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_air_outs
+    verbose_name: Stats - Batting - Air Outs
+    metric_type: null
+    expression: SUM(batting_air_outs)
+    description: Number of Air Outs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_caught_stealing
+    verbose_name: Stats - Pitching - Caught Stealing
+    metric_type: null
+    expression: SUM(pitching_caught_stealing)
+    description: Number of Caught Stealing by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_caught_stealing
+    verbose_name: Stats - Fielding - Caught Stealing
+    metric_type: null
+    expression: SUM(fielding_caught_stealing)
+    description: Number of Caught Stealing by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_games_played
+    verbose_name: Stats - Pitching - Games Played
+    metric_type: null
+    expression: SUM(pitching_games_played)
+    description: Number of Games Played by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_games_started
+    verbose_name: Stats - Pitching - Games Started
+    metric_type: null
+    expression: SUM(pitching_games_started)
+    description: Number of Games Started by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_intentional_walks
+    verbose_name: Stats - Pitching - Intensional Walks
+    metric_type: null
+    expression: SUM(pitching_intentional_walks)
+    description: Number of Intensional Walks by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_games_started
+    verbose_name: Stats - Fielding - Games Started
+    metric_type: null
+    expression: SUM(fielding_games_started)
+    description: Number of Games Started by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_sac_bunts
+    verbose_name: Stats - Pitching - Sac Bunts
+    metric_type: null
+    expression: SUM(pitching_sac_bunts)
+    description: Number of Sac Bunts by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_stolen_bases
+    verbose_name: Stats - Pitching - Stolen Bases
+    metric_type: null
+    expression: SUM(pitching_stolen_bases)
+    description: Number of Stolen Bases by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_hit_batsmen
+    verbose_name: Stats - Pitching - Hit Batsmen
+    metric_type: null
+    expression: SUM(pitching_hit_batsmen)
+    description: Number of Hit Batsmen by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_blown_saves
+    verbose_name: Stats - Pitching - Blown Saves
+    metric_type: null
+    expression: SUM(pitching_blown_saves)
+    description: Number of Blown Saves by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_stolen_bases
+    verbose_name: Stats - Fielding - Stolen Bases
+    metric_type: null
+    expression: SUM(fielding_stolen_bases)
+    description: Number of Stolen Bases by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_ground_outs
+    verbose_name: Stats - Batting - Ground Outs
+    metric_type: null
+    expression: SUM(batting_ground_outs)
+    description: Number of Ground Outs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_home_runs
+    verbose_name: Stats - Batting - Home Runs
+    metric_type: null
+    expression: SUM(batting_home_runs)
+    description: Number of Home Runs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_strike_outs
+    verbose_name: Stats - Batting - Strike Outs
+    metric_type: null
+    expression: SUM(batting_strike_outs)
+    description: Number of Strike Outs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_line_outs
+    verbose_name: Stats - Batting - Line Outs
+    metric_type: null
+    expression: SUM(batting_line_outs)
+    description: Number of Line Outs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_fly_outs
+    verbose_name: Stats - Batting - Fly Outs
+    metric_type: null
+    expression: SUM(batting_fly_outs)
+    description: Number of Fly Outs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_pop_outs
+    verbose_name: Stats - Batting - Pop Outs
+    metric_type: null
+    expression: SUM(batting_pop_outs)
+    description: Number of Pop Outs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_catchers_interference
+    verbose_name: Stats - Pitching - Catchers Interference
+    metric_type: null
+    expression: SUM(pitching_catchers_interference)
+    description: Number of Catchers Interference by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_games_pitched
+    verbose_name: Stats - Pitching - Games Pitched
+    metric_type: null
+    expression: SUM(pitching_games_pitched)
+    description: Number of Games Pitched by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_complete_games
+    verbose_name: Stats - Batting - Complete Games
+    metric_type: null
+    expression: SUM(batting_complete_games)
+    description: Number of Complete Games by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_sac_flies
+    verbose_name: Stats - Batting - Sac Flies
+    metric_type: null
+    expression: SUM(batting_sac_flies)
+    description: Number of Sac Flies by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_games_finished
+    verbose_name: Stats - Pitching - Games Finished
+    metric_type: null
+    expression: SUM(pitching_games_finished)
+    description: Number of Games Finished by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_earned_runs
+    verbose_name: Stats - Pitching - Earned Runs
+    metric_type: null
+    expression: SUM(pitching_earned_runs)
+    description: Number of Earned Runs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_save_opportunities
+    verbose_name: Stats - Pitching - Save Opportunities
+    metric_type: null
+    expression: SUM(pitching_save_opportunities)
+    description: Number of Save Opportunities by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_air_outs
+    verbose_name: Stats - Pitching - Air Outs
+    metric_type: null
+    expression: SUM(pitching_air_outs)
+    description: Number of Air Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_wild_pitches
+    verbose_name: Stats - Pitching - Wild Pitches
+    metric_type: null
+    expression: SUM(pitching_wild_pitches)
+    description: Number of Wild Pitches by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_pitches_thrown
+    verbose_name: Stats - Pitching - Pitches Thrown
+    metric_type: null
+    expression: SUM(pitching_pitches_thrown)
+    description: Number of Pitches Thrown by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_inherited_runners_scored
+    verbose_name: Stats - Pitching - Inherited Runners Scored
+    metric_type: null
+    expression: SUM(pitching_inherited_runners_scored)
+    description: Number of Inherited Runners Scored by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_ground_outs
+    verbose_name: Stats - Pitching - Ground Outs
+    metric_type: null
+    expression: SUM(pitching_ground_outs)
+    description: Number of Ground Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_home_runs
+    verbose_name: Stats - Pitching - Home Runs
+    metric_type: null
+    expression: SUM(pitching_home_runs)
+    description: Number of Home Runs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_strike_outs
+    verbose_name: Stats - Pitching - Strike Outs
+    metric_type: null
+    expression: SUM(pitching_strike_outs)
+    description: Number of Strike Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_line_outs
+    verbose_name: Stats - Pitching - Line Outs
+    metric_type: null
+    expression: SUM(pitching_line_outs)
+    description: Number of Line Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_fly_outs
+    verbose_name: Stats - Pitching - Fly Outs
+    metric_type: null
+    expression: SUM(pitching_fly_outs)
+    description: Number of Fly Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_pop_outs
+    verbose_name: Stats - Pitching - Pop Outs
+    metric_type: null
+    expression: SUM(pitching_pop_outs)
+    description: Number of Pop Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_put_outs
+    verbose_name: Stats - Fielding - Put Outs
+    metric_type: null
+    expression: SUM(fielding_put_outs)
+    description: Number of Put Outs by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_doubles
+    verbose_name: Stats - Batting - Doubles
+    metric_type: null
+    expression: SUM(batting_doubles)
+    description: Number of Doubles by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_rbi
+    verbose_name: Stats - Batting - RBI
+    metric_type: null
+    expression: SUM(batting_rbi)
+    description: Number of RBI by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_pickoffs
+    verbose_name: Stats - Batting - Pickoffs
+    metric_type: null
+    expression: SUM(batting_pickoffs)
+    description: Number of Pickoffs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_balks
+    verbose_name: Stats - Pitching - Balks
+    metric_type: null
+    expression: SUM(pitching_balks)
+    description: Number of Balks by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_balls
+    verbose_name: Stats - Pitching - Balls
+    metric_type: null
+    expression: SUM(pitching_balls)
+    description: Number of Balls by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_triples
+    verbose_name: Stats - Batting - Triples
+    metric_type: null
+    expression: SUM(batting_triples)
+    description: Number of Triples by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_hits
+    verbose_name: Stats - Batting - Hits
+    metric_type: null
+    expression: SUM(batting_hits)
+    description: Number of Hits by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: batting_runs
+    verbose_name: Stats - Batting - Runs
+    metric_type: null
+    expression: SUM(batting_runs)
+    description: Number of Runs by a Batter
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_chances
+    verbose_name: Stats - Fielding - Chances
+    metric_type: null
+    expression: SUM(fielding_chances)
+    description: Number of Chances by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_saves
+    verbose_name: Stats - Pitching - Saves
+    metric_type: null
+    expression: SUM(pitching_saves)
+    description: Number of Saves by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_assists
+    verbose_name: Stats - Fielding - Assists
+    metric_type: null
+    expression: SUM(fielding_assists)
+    description: Number of Assists by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_doubles
+    verbose_name: Stats - Pitching - Doubles
+    metric_type: null
+    expression: SUM(pitching_doubles)
+    description: Number of Doubles by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_rbi
+    verbose_name: Stats - Pitching - RBI
+    metric_type: null
+    expression: SUM(pitching_rbi)
+    description: Number of RBI by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_pickoffs
+    verbose_name: Stats - Pitching - Pickoffs
+    metric_type: null
+    expression: SUM(pitching_pickoffs)
+    description: Number of Pickoffs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_pickoffs
+    verbose_name: Stats - Fielding - Pickoffs
+    metric_type: null
+    expression: SUM(fielding_pickoffs)
+    description: Number of Pickoffs by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_holds
+    verbose_name: Stats - Pitching - Holds
+    metric_type: null
+    expression: SUM(pitching_holds)
+    description: Number of Holds by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_strikes
+    verbose_name: Stats - Pitching - Strikes
+    metric_type: null
+    expression: SUM(pitching_strikes)
+    description: Number of Strikes by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_triples
+    verbose_name: Stats - Pitching - Triples
+    metric_type: null
+    expression: SUM(pitching_triples)
+    description: Number of Triples by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_losses
+    verbose_name: Stats - Pitching - Losses
+    metric_type: null
+    expression: SUM(pitching_losses)
+    description: Number of Losses by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_hits
+    verbose_name: Stats - Pitching - Hits
+    metric_type: null
+    expression: SUM(pitching_hits)
+    description: Number of Hits by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_shutouts
+    verbose_name: Stats - Pitching - Shutouts
+    metric_type: null
+    expression: SUM(pitching_shutouts)
+    description: Number of Shutouts by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_wins
+    verbose_name: Stats - Pitching - Wins
+    metric_type: null
+    expression: SUM(pitching_wins)
+    description: Number of Wins by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_runs
+    verbose_name: Stats - Pitching - Runs
+    metric_type: null
+    expression: SUM(pitching_runs)
+    description: Number of Runs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: pitching_outs
+    verbose_name: Stats - Pitching - Outs
+    metric_type: null
+    expression: SUM(pitching_outs)
+    description: Number of Outs by a Pitcher
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fielding_errors
+    verbose_name: Stats - Fielding - Errors
+    metric_type: null
+    expression: SUM(fielding_errors)
+    description: Number of Errors by a Fielder
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
+  - metric_name: fantasy_salary_per_game
+    verbose_name: Fantasy Salary Per Game
+    metric_type: null
+    expression: SUM(salary)
+    description: Fantasy Salary Per Game for the Game
+    d3format: null
+    currency: null
+    extra: { }
+    warning_text: null
+
 columns:
-- column_name: load_time
-  verbose_name: null
+  - column_name: game_date
+    verbose_name: Game Date
+    is_dttm: true
+    is_active: true
+    type: TIMESTAMP WITHOUT TIME ZONE
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: The date of the game
+    python_date_format: null
+    extra: { }
+
+  - column_name: load_time
+    verbose_name: Load Time
   is_dttm: true
-  is_active: true
+    is_active: false
   type: TIMESTAMP WITHOUT TIME ZONE
   advanced_data_type: null
   groupby: true
@@ -36,9 +1061,36 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: homeRunsPer9
-  verbose_name: null
+    extra: { }
+
+  - column_name: pitching_runs_scored_per9
+    verbose_name: Runs Scored Per 9 Pitches
+    is_dttm: false
+    is_active: true
+    type: VARCHAR
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: null
+    python_date_format: null
+    extra: { }
+
+  - column_name: pitching_home_runs_per9
+    verbose_name: Home Runs Per 9 Pitches
+    is_dttm: false
+    is_active: true
+    type: VARCHAR
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: null
+    python_date_format: null
+    extra: { }
+
+  - column_name: batting_at_bats_per_home_run
+    verbose_name: At Bats Per Home Run
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -48,9 +1100,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: runsScoredPer9
-  verbose_name: null
+    extra: { }
+
+  - column_name: batting_stolen_base_percentage
+    verbose_name: Offense - Stolen Base Percentage
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -60,9 +1113,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: atBatsPerHomeRun
-  verbose_name: null
+    extra: { }
+
+  - column_name: pitching_stolen_base_percentage
+    verbose_name: Defense - Stolen Base Percentage
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -72,9 +1126,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: stolenBasePercentage
-  verbose_name: null
+    extra: { }
+
+  - column_name: fielding_stolen_base_percentage
+    verbose_name: Defense - Stolen Base Percentage
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -84,9 +1139,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: strikePercentage
-  verbose_name: null
+    extra: { }
+
+  - column_name: pitching_strike_percentage
+    verbose_name: Defense - Strike Percentage
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -96,9 +1152,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: inningsPitched
-  verbose_name: null
+    extra: { }
+
+  - column_name: player_roster_id
+    verbose_name: Roster ID
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -108,9 +1165,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: position_abbreviation
-  verbose_name: null
+    extra: { }
+
+  - column_name: position_abbreviation
+    verbose_name: Abbreviated Position
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -120,9 +1178,23 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: player_name
-  verbose_name: null
+    extra: { }
+
+  - column_name: batting_summary
+    verbose_name: Batting Summary
+    is_dttm: false
+    is_active: true
+    type: VARCHAR
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: null
+    python_date_format: null
+    extra: { }
+
+  - column_name: player_name
+    verbose_name: Player Name
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -132,9 +1204,23 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: batting_order
-  verbose_name: null
+    extra: { }
+
+  - column_name: team_name
+    verbose_name: Fantasy Team Name
+    is_dttm: false
+    is_active: true
+    type: VARCHAR
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: null
+    python_date_format: null
+    extra: { }
+
+  - column_name: batting_order
+    verbose_name: Batting Order
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -144,9 +1230,23 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: position_name
-  verbose_name: null
+    extra: { }
+
+  - column_name: batting_note
+    verbose_name: Batting Note
+  is_dttm: false
+  is_active: true
+  type: VARCHAR
+  advanced_data_type: null
+    groupby: false
+    filterable: false
+  expression: null
+  description: null
+  python_date_format: null
+    extra: { }
+
+  - column_name: pitching_summary
+    verbose_name: Pitching Summary
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -154,11 +1254,25 @@ columns:
   groupby: true
   filterable: true
   expression: null
-  description: null
+    description: Pitching Summary for the Game
   python_date_format: null
-  extra: null
-- column_name: jersey_number
-  verbose_name: null
+    extra: { }
+
+  - column_name: player_id
+    verbose_name: Player ID
+  is_dttm: false
+  is_active: true
+  type: VARCHAR
+  advanced_data_type: null
+    groupby: false
+  filterable: true
+  expression: null
+    description: ID for the Player
+  python_date_format: null
+    extra: { }
+
+  - column_name: position_name
+    verbose_name: Position Name
   is_dttm: false
   is_active: true
   type: VARCHAR
@@ -166,70 +1280,102 @@ columns:
   groupby: true
   filterable: true
   expression: null
-  description: null
+    description: Position Name for the Player
   python_date_format: null
-  extra: null
-- column_name: position_type
+    extra: { }
+
+  - column_name: jersey_number
+    verbose_name: Jersey Number
+  is_dttm: false
+  is_active: true
+  type: VARCHAR
+  advanced_data_type: null
+    groupby: false
+  filterable: true
+  expression: null
+    description: Jersey Number for the Player
+  python_date_format: null
+    extra: { }
+
+  - column_name: pitching_note
   verbose_name: null
   is_dttm: false
   is_active: true
   type: VARCHAR
   advanced_data_type: null
-  groupby: true
+    groupby: false
   filterable: true
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: summary
-  verbose_name: null
+    extra: { }
+
+  - column_name: fielding_fielding
+    verbose_name: Defense - Fielding
   is_dttm: false
-  is_active: true
-  type: VARCHAR
+    is_active: false
+    type: VARCHAR
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+    description: F
+  python_date_format: null
+    extra: { }
+
+  - column_name: position_type
+    verbose_name: Position Type (Catcher, Outfielder, Infielder, Pitcher)
+    is_dttm: false
+    is_active: true
+    type: VARCHAR
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: null
+    python_date_format: null
+    extra: { }
+
+  - column_name: name
+    verbose_name: Player Name (Duplicate)
+    is_dttm: false
+    is_active: false
+    type: VARCHAR
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: null
+    python_date_format: null
+    extra: { }
+
+  - column_name: batter_status
+    verbose_name: Batter Status
+  is_dttm: false
+    is_active: false
+  type: BOOLEAN
   advanced_data_type: null
   groupby: true
   filterable: true
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: fielding
-  verbose_name: null
+    extra: { }
+
+  - column_name: pitcher_status
+    verbose_name: Pitcher Status
   is_dttm: false
-  is_active: true
-  type: VARCHAR
+    is_active: false
+  type: BOOLEAN
   advanced_data_type: null
   groupby: true
   filterable: true
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: note
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: VARCHAR
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: plateAppearances
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: batter_status
+    extra: { }
+
+  - column_name: on_bench
   verbose_name: null
   is_dttm: false
   is_active: true
@@ -240,9 +1386,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: pitcher_status
-  verbose_name: null
+    extra: { }
+
+  - column_name: substitute
+    verbose_name: Is Player a Substitute In (Y/N)
   is_dttm: false
   is_active: true
   type: BOOLEAN
@@ -252,33 +1399,10 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: null
-- column_name: on_bench
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: BOOLEAN
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: substitute
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: BOOLEAN
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: baseOnBalls
-  verbose_name: null
+    extra: { }
+
+  - column_name: game_pk
+    verbose_name: Game ID
   is_dttm: false
   is_active: true
   type: FLOAT
@@ -286,659 +1410,25 @@ columns:
   groupby: true
   filterable: true
   expression: null
-  description: null
+    description: Game ID for the Game
   python_date_format: null
-  extra: null
-- column_name: leftOnBase
-  verbose_name: null
+    extra: { }
+
+  - column_name: team_id
+    verbose_name: Fantasy Team ID
   is_dttm: false
-  is_active: true
-  type: FLOAT
+    is_active: false
+  type: BIGINT
   advanced_data_type: null
   groupby: true
   filterable: true
   expression: null
-  description: null
+    description: ID for the Fantasy Team
   python_date_format: null
-  extra: null
-- column_name: hitByPitch
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: passedBall
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: totalBases
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: atBats
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: sacBunts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: stolenBases
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: hitBatsmen
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: groundIntoDoublePlay
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: battersFaced
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: sacFlies
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: gamesFinished
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: completeGames
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: groundIntoTriplePlay
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: catchersInterference
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: numberOfPitches
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: saveOpportunities
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: airOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: groundOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: strikeOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: lineOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: flyOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: popOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: putOuts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: gamesPlayed
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: gamesPitched
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: wildPitches
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: inheritedRunnersScored
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: earnedRuns
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: inheritedRunners
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: homeRuns
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: caughtStealing
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: gamesStarted
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: blownSaves
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: pitchesThrown
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: intentionalWalks
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: balks
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: balls
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: chances
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: saves
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: assists
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: doubles
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: rbi
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: pickoffs
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: holds
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: strikes
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: triples
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: losses
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: errors
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: hits
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: shutouts
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: wins
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: runs
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: outs
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: FLOAT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
-- column_name: gamePk
-  verbose_name: null
+    extra: { }
+
+  - column_name: salary
+    verbose_name: Fantasy Salary
   is_dttm: false
   is_active: true
   type: BIGINT
@@ -946,32 +1436,34 @@ columns:
   groupby: true
   filterable: true
   expression: null
-  description: null
+    description: Player's Fantasy Salary at the time of the Game
   python_date_format: null
-  extra: null
-- column_name: player_id
-  verbose_name: null
+    extra: { }
+
+  - column_name: team
+    verbose_name: MLB Team
   is_dttm: false
-  is_active: true
+    is_active: false
   type: BIGINT
   advanced_data_type: null
   groupby: true
   filterable: true
   expression: null
-  description: null
+    description: ID for the MLB Team at the time of the Game
   python_date_format: null
-  extra: null
-- column_name: team
-  verbose_name: null
-  is_dttm: false
-  is_active: true
-  type: BIGINT
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: null
+    extra: { }
+
+  - column_name: positions
+    verbose_name: Ottoneu - Eligible Positions
+    is_dttm: false
+    is_active: true
+    type: UNKNOWN
+    advanced_data_type: null
+    groupby: true
+    filterable: true
+    expression: null
+    description: Current Eligible Positions for the Player
+    python_date_format: null
+    extra: { }
 version: 1.0.0
 database_uuid: e644ce55-2ae8-4c38-b38b-2f1b2f6c8613

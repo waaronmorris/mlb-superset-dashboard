@@ -46,9 +46,6 @@ ENV SUPERSET_CONFIG_PATH /app/superset_config.py
 
 USER root
 
-#install zip and unzip
-RUN apt-get update && apt-get install -y zip unzip
-
 #copy to superset_home/assets/dashboard_export.zip
 COPY --from=zip /app/assets/dataset_import.zip /app/superset_home/assets/dataset_import.zip
 
@@ -62,6 +59,8 @@ COPY superset/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 USER superset
+
+EXPOSE 443
 
 ENTRYPOINT ["/entrypoint.sh"]
 

@@ -57,6 +57,8 @@ services:
     depends_on:
       - superset_postgres
       - superset_redis
+    ports:
+      - "443:443"
 
 volumes:
   redis:

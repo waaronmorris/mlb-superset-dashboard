@@ -1,0 +1,47 @@
+slice_name: Negative Points By Category
+description: null
+certified_by: null
+certification_details: null
+viz_type: radar
+params:
+  datasource: 2__table
+  viz_type: radar
+  slice_id: 39
+  groupby:
+    - team_name
+  metrics:
+    - ab_points
+    - home_runs_allowed_points
+    - stolen_bases
+    - walks_pitched_points
+  adhoc_filters:
+    - expressionType: SIMPLE
+      subject: load_time
+      operator: TEMPORAL_RANGE
+      comparator: No filter
+      clause: WHERE
+      sqlExpression: null
+      isExtra: false
+      isNew: false
+      datasourceWarning: false
+      filterOptionName: filter_3j5bujr1s8l_4wb6g8tcch3
+  row_limit: 10000
+  color_scheme: supersetColors
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  show_labels: true
+  label_type: value
+  label_position: top
+  number_format: SMART_NUMBER
+  date_format: smart_date
+  extra_form_data: { }
+  dashboards:
+    - 1
+query_context: '{"datasource":{"id":2,"type":"table"},"force":false,"queries":[{"filters":[{"col":"load_time","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["team_name"],"metrics":["ab_points","home_runs_allowed_points","stolen_bases","walks_pitched_points"],"orderby":[["ab_points",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"2__table","viz_type":"radar","slice_id":39,"groupby":["team_name"],"metrics":["ab_points","home_runs_allowed_points","stolen_bases","walks_pitched_points"],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"load_time","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_3j5bujr1s8l_4wb6g8tcch3"}],"row_limit":10000,"color_scheme":"supersetColors","show_legend":true,"legendType":"scroll","legendOrientation":"top","show_labels":true,"label_type":"value","label_position":"top","number_format":"SMART_NUMBER","date_format":"smart_date","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 1066a314-8284-49ff-8b78-fac3aecd398a
+version: 1.0.0
+dataset_uuid: 80223bcc-e5e5-43d6-b3ef-8bf0b0d9c884

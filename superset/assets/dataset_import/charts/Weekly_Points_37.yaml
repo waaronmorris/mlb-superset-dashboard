@@ -1,0 +1,63 @@
+slice_name: Weekly Points
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_line
+params:
+  datasource: 2__table
+  viz_type: echarts_timeseries_line
+  slice_id: 37
+  x_axis: game_date
+  time_grain_sqla: P1W
+  metrics:
+    - total_points
+  groupby:
+    - team_name
+  adhoc_filters:
+    - expressionType: SIMPLE
+      subject: game_date
+      operator: TEMPORAL_RANGE
+      comparator: 'DATEADD(DATETIME("2024-10-31T00:00:00"), -7, month) : 2024-10-31T00:00:00'
+      clause: WHERE
+      sqlExpression: null
+      isExtra: false
+      isNew: false
+      datasourceWarning: false
+      filterOptionName: filter_puyeilo96p7_lfs78jf65yg
+  row_limit: 10000
+  truncate_metric: true
+  show_empty_columns: true
+  comparison_type: values
+  annotation_layers: [ ]
+  forecastPeriods: 10
+  forecastInterval: 0.8
+  x_axis_title_margin: 15
+  y_axis_title_margin: 15
+  y_axis_title_position: Left
+  sort_series_type: sum
+  color_scheme: supersetColors
+  seriesType: line
+  only_total: true
+  opacity: 0.2
+  markerSize: 6
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  x_axis_time_format: smart_date
+  rich_tooltip: true
+  tooltipTimeFormat: smart_date
+  y_axis_format: SMART_NUMBER
+  truncateXAxis: true
+  y_axis_bounds:
+    - null
+    - null
+  extra_form_data: { }
+  dashboards:
+    - 1
+query_context: '{"datasource":{"id":2,"type":"table"},"force":false,"queries":[{"filters":[{"col":"game_date","op":"TEMPORAL_RANGE","val":"DATEADD(DATETIME(\"2024-10-31T00:00:00\"),
+  -7, month) : 2024-10-31T00:00:00"}],"extras":{"time_grain_sqla":"P1W","having":"","where":""},"applied_time_extras":{},"columns":[{"timeGrain":"P1W","columnType":"BASE_AXIS","sqlExpression":"game_date","label":"game_date","expressionType":"SQL"},"team_name"],"metrics":["total_points"],"orderby":[["total_points",false]],"annotation_layers":[],"row_limit":10000,"series_columns":["team_name"],"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"time_offsets":[],"post_processing":[{"operation":"pivot","options":{"index":["game_date"],"columns":["team_name"],"aggregates":{"total_points":{"operator":"mean"}},"drop_missing_columns":false}},{"operation":"rename","options":{"columns":{"total_points":null},"level":0,"inplace":true}},{"operation":"flatten"}]}],"form_data":{"datasource":"2__table","viz_type":"echarts_timeseries_line","slice_id":37,"x_axis":"game_date","time_grain_sqla":"P1W","metrics":["total_points"],"groupby":["team_name"],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"game_date","operator":"TEMPORAL_RANGE","comparator":"DATEADD(DATETIME(\"2024-10-31T00:00:00\"),
+  -7, month) : 2024-10-31T00:00:00","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_puyeilo96p7_lfs78jf65yg"}],"row_limit":10000,"truncate_metric":true,"show_empty_columns":true,"comparison_type":"values","annotation_layers":[],"forecastPeriods":10,"forecastInterval":0.8,"x_axis_title_margin":15,"y_axis_title_margin":15,"y_axis_title_position":"Left","sort_series_type":"sum","color_scheme":"supersetColors","seriesType":"line","only_total":true,"opacity":0.2,"markerSize":6,"show_legend":true,"legendType":"scroll","legendOrientation":"top","x_axis_time_format":"smart_date","rich_tooltip":true,"tooltipTimeFormat":"smart_date","y_axis_format":"SMART_NUMBER","truncateXAxis":true,"y_axis_bounds":[null,null],"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 54d70b91-cfa8-4cbc-a402-5390313ac022
+version: 1.0.0
+dataset_uuid: 80223bcc-e5e5-43d6-b3ef-8bf0b0d9c884

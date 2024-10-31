@@ -9,4 +9,6 @@ run_dbt_dev:
 run_dbt_prod:
 	@set -a && . mlb_dbt/.env && set +a && cd mlb_dbt && dbt run --target prod
 
-
+.PHONY: run_superset
+run_superset:
+	@docker-compose up -d --build

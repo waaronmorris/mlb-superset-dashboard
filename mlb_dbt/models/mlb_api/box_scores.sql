@@ -1,83 +1,28 @@
-{{ config(materialized='table') }}
+{{ config(
+        materialized='table'
+        )
+}}
 
 Select
-    player_name,
-    player_id,
-    team,
-    "position_name"""  AS position_name,
-    position_type,
-    position_abbreviation,
-    batting_order,
-    batter_status,
-    pitcher_status,
-    on_bench,
-    substitute,
-    jersey_number,
-    summary,
-    CAST(gamesPlayed AS FLOAT) AS gamesPlayed,
-    CAST(flyOuts AS FLOAT) AS flyOuts,
-    CAST(groundOuts AS FLOAT) AS groundOuts,
-    CAST(airOuts AS FLOAT) AS airOuts,
-    CAST(runs AS FLOAT) AS runs,
-    CAST(doubles AS FLOAT) AS doubles,
-    CAST(triples AS FLOAT) AS triples,
-    CAST(homeRuns AS FLOAT) AS homeRuns,
-    CAST(strikeOuts AS FLOAT) AS strikeOuts,
-    CAST(baseOnBalls AS FLOAT) AS baseOnBalls,
-    CAST(intentionalWalks AS FLOAT) AS intentionalWalks,
-    CAST(hits AS FLOAT) AS hits,
-    CAST(hitByPitch AS FLOAT) AS hitByPitch,
-    CAST(atBats AS FLOAT) AS atBats,
-    CAST(caughtStealing AS FLOAT) AS caughtStealing,
-    CAST(stolenBases AS FLOAT) AS stolenBases,
-    stolenBasePercentage,
-    CAST(groundIntoDoublePlay AS FLOAT) AS groundIntoDoublePlay,
-    CAST(groundIntoTriplePlay AS FLOAT) AS groundIntoTriplePlay,
-    CAST(plateAppearances AS FLOAT) AS plateAppearances,
-    CAST(totalBases AS FLOAT) AS totalBases,
-    CAST(rbi AS FLOAT) AS rbi,
-    CAST(leftOnBase AS FLOAT) AS leftOnBase,
-    CAST(sacBunts AS FLOAT) AS sacBunts,
-    CAST(sacFlies AS FLOAT) AS sacFlies,
-    CAST(catchersInterference AS FLOAT) AS catchersInterference,
-    CAST(pickoffs AS FLOAT) AS pickoffs,
-    atBatsPerHomeRun,
-    CAST(popOuts AS FLOAT) AS popOuts,
-    CAST(lineOuts AS FLOAT) AS lineOuts,
-    CAST(gamesStarted AS FLOAT) AS gamesStarted,
-    CAST(assists AS FLOAT) AS assists,
-    CAST(putOuts AS FLOAT) AS putOuts,
-    CAST(errors AS FLOAT) AS errors,
-    CAST(chances AS FLOAT) AS chances,
-    fielding,
-    CAST(passedBall AS FLOAT) AS passedBall,
-    note,
-    CAST(numberOfPitches AS FLOAT) AS numberOfPitches,
-    inningsPitched,
-    CAST(wins AS FLOAT) AS wins,
-    CAST(losses AS FLOAT) AS losses,
-    CAST(saves AS FLOAT) AS saves,
-    CAST(saveOpportunities AS FLOAT) AS saveOpportunities,
-    CAST(holds AS FLOAT) AS holds,
-    CAST(blownSaves AS FLOAT) AS blownSaves,
-    CAST(earnedRuns AS FLOAT) AS earnedRuns,
-    CAST(battersFaced AS FLOAT) AS battersFaced,
-    CAST(outs AS FLOAT) AS outs,
-    CAST(gamesPitched AS FLOAT) AS gamesPitched,
-    CAST(completeGames AS FLOAT) AS completeGames,
-    CAST(shutouts AS FLOAT) AS shutouts,
-    CAST(pitchesThrown AS FLOAT) AS pitchesThrown,
-    CAST(balls AS FLOAT) AS balls,
-    CAST(strikes AS FLOAT) AS strikes,
-    strikePercentage,
-    CAST(hitBatsmen AS FLOAT) AS hitBatsmen,
-    CAST(balks AS FLOAT) AS balks,
-    CAST(wildPitches AS FLOAT) AS wildPitches,
-    CAST(gamesFinished AS FLOAT) AS gamesFinished,
-    runsScoredPer9,
-    homeRunsPer9,
-    CAST(inheritedRunners AS FLOAT) AS inheritedRunners,
-    CAST(inheritedRunnersScored AS FLOAT) AS inheritedRunnersScored,
-    gamePk,
-    load_time
-FROM {{ source("mlb_stats","box_score") }}
+    *
+  , (
+        IFNULL(ab_points, 0)
+            + IFNULL(h_points, 0)
+            + IFNULL(doubles_points, 0)
+            + IFNULL(triples_points, 0)
+            + IFNULL(home_runs_points, 0)
+            + IFNULL(walks_points, 0)
+            + IFNULL(hits_by_pitch, 0)
+            + IFNULL(stolen_bases, 0)
+            + IFNULL(caught_stealing, 0)
+            + IFNULL(innings_pitched, 0)
+            + IFNULL(strikeouts_points, 0)
+            + IFNULL(walks_pitched_points, 0)
+            + IFNULL(hit_batsmen_points, 0)
+            + IFNULL(home_runs_allowed_points, 0)
+            + IFNULL(saves_points, 0)
+            + IFNULL(holds_points, 0)
+        )
+        as total_points
+FROM
+    {{ source("mlb_stats","fantasy_box_scores") }}
