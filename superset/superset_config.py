@@ -75,6 +75,7 @@ FEATURE_FLAGS = {
     "THUMBNAILS": False,
     "THUMBNAILS_SQLA_LISTENERS": False,
     "ALERT_REPORTS": True,
+    "VERSIONED_EXPORT": True,
 }
 
 

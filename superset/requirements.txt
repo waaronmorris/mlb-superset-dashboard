@@ -1,5 +1,5 @@
 duckdb==1.0.0
 duckdb-engine>=0.13.1
 psycopg2-binary
-apache-superset>=4.0.0
+apache-superset>=4.0.2
 prophet==1.1.6

@@ -58,7 +58,7 @@ services:
       - superset_postgres
       - superset_redis
     ports:
-      - "443:443"
+      - "8088:8088"
 
 volumes:
   redis:

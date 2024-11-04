@@ -60,7 +60,7 @@ RUN chmod +x /entrypoint.sh
 
 USER superset
 
-EXPOSE 443
+EXPOSE 8088
 
 ENTRYPOINT ["/entrypoint.sh"]
 
