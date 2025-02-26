@@ -32,11 +32,17 @@ coverage.xml
 .hypothesis/
 
 # Environment files
+.env
+env/.env
+.env.*
+!env/.env.default
+!env/.env.schema
+
+# Remove redundant entries
 .env.production
 .env.staging
 .env.development
-!env/.env.default
-!env/.env.schema
+.env.local
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -977,17 +983,6 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
-
-# Environments
-.env.production
-.env.staging
-.env.development
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
 # Spyder project settings
 .spyderproject
