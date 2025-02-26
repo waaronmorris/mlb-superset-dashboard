@@ -15,7 +15,7 @@ build/
 .venv/
 venv/
 ENV/
-env/
+# env/
 env.bak/
 venv.bak/
 
