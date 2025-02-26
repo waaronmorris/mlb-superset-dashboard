@@ -25,6 +25,32 @@ A modern data analytics platform combining MLB statistics with fantasy baseball 
 - Docker and Docker Compose
 - Python 3.9+
 - Make (optional, but recommended)
+- Cloudflare R2 bucket populated with MLB stats data (see [MLB Stats Pipeline](#mlb-stats-pipeline) below)
+
+### MLB Stats Pipeline
+
+Before running this project, you need to populate your Cloudflare R2 bucket with MLB statistics data using the [MLB Stats Dagster Pipeline](https://github.com/waaronmorris/mlb_stats_dagster):
+
+1. Clone and set up the MLB Stats Pipeline:
+   ```bash
+   git clone https://github.com/waaronmorris/mlb_stats_dagster.git
+   cd mlb_stats_dagster
+   ```
+
+2. Configure the pipeline:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Cloudflare R2 credentials and MLB season configuration
+   ```
+
+3. Start the pipeline using Docker Compose:
+   ```bash
+   docker-compose up -d
+   ```
+
+4. Access the Dagster UI at `http://localhost:3000` and run the pipeline to populate your R2 bucket with MLB statistics data.
+
+5. Once the pipeline has completed and your R2 bucket contains the MLB stats data, return here to continue setup.
 
 ### Quick Start
 
@@ -37,7 +63,10 @@ A modern data analytics platform combining MLB statistics with fantasy baseball 
 2. Set up environment:
    ```bash
    cp env/.env.default env/.env
-   # Edit env/.env with your configuration
+   # Edit env/.env with your configuration including:
+   # - CLOUDFLARE_R2_ACCESS_KEY
+   # - CLOUDFLARE_R2_SECRET_KEY
+   # - CLOUDFLARE_R2_BUCKET_NAME
    ln -s env/.env .env
    ```
 
