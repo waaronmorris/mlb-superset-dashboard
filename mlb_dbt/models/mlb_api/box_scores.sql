@@ -4,25 +4,11 @@
 }}
 
 Select
-    *
-  , (
-        IFNULL(ab_points, 0)
-            + IFNULL(h_points, 0)
-            + IFNULL(doubles_points, 0)
-            + IFNULL(triples_points, 0)
-            + IFNULL(home_runs_points, 0)
-            + IFNULL(walks_points, 0)
-            + IFNULL(hits_by_pitch, 0)
-            + IFNULL(stolen_bases, 0)
-            + IFNULL(caught_stealing, 0)
-            + IFNULL(innings_pitched, 0)
-            + IFNULL(strikeouts_points, 0)
-            + IFNULL(walks_pitched_points, 0)
-            + IFNULL(hit_batsmen_points, 0)
-            + IFNULL(home_runs_allowed_points, 0)
-            + IFNULL(saves_points, 0)
-            + IFNULL(holds_points, 0)
-        )
-        as total_points
-FROM
-    {{ source("mlb_stats","fantasy_box_scores") }}
+    bx.*
+  , date_diff('day', first_value(bx.game_date) OVER  (PARTITION BY bx.season ORDER BY bx.game_date), bx.game_date) + 1 as days_in_season
+  , sched.* exclude (game_pk, season)
+    FROM
+        {{ source("mlb_stats","box_scores") }}   bx
+            LEFT JOIN
+            {{ source("mlb_stats","schedule") }} sched
+                ON bx.game_pk = sched.game_pk

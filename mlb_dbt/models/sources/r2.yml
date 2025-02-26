@@ -5,10 +5,11 @@ sources:
     meta:
       external_location: "r2://mlb-stats/{name}.parquet"
     tables:
-      - name: fantasy_box_scores
+      - name: box_scores
+        meta:
+          folder: "refined/mlb"
+          external_location: "r2://mlb-stats/refined/box_scores.parquet"
+      - name: schedule
         meta:
           folder: "stage/mlb"
-          external_location: "r2://mlb-stats/refined/fantasy_box_scores.parquet"
-
-
-
+          external_location: "r2://mlb-stats/stage/mlb/schedule/schedule.parquet"

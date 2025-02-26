@@ -1,0 +1,5 @@
+mlb_dbt/target
+mlb_dbt/dbt_packages
+*.duckdb
+
+logs

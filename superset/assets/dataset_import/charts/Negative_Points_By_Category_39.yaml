@@ -8,23 +8,23 @@ params:
   viz_type: radar
   slice_id: 39
   groupby:
-    - team_name
+  - team_name
   metrics:
-    - ab_points
-    - home_runs_allowed_points
-    - stolen_bases
-    - walks_pitched_points
+  - At Bats Points
+  - Home Runs Allowed Points
+  - Stolen Bases Points
+  - Walks Pitched Points
   adhoc_filters:
-    - expressionType: SIMPLE
-      subject: load_time
-      operator: TEMPORAL_RANGE
-      comparator: No filter
-      clause: WHERE
-      sqlExpression: null
-      isExtra: false
-      isNew: false
-      datasourceWarning: false
-      filterOptionName: filter_3j5bujr1s8l_4wb6g8tcch3
+  - expressionType: SIMPLE
+    subject: load_time
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_3j5bujr1s8l_4wb6g8tcch3
   row_limit: 10000
   color_scheme: supersetColors
   show_legend: true
@@ -35,11 +35,11 @@ params:
   label_position: top
   number_format: SMART_NUMBER
   date_format: smart_date
-  extra_form_data: { }
+  extra_form_data: {}
   dashboards:
-    - 1
+  - 1
 query_context: '{"datasource":{"id":2,"type":"table"},"force":false,"queries":[{"filters":[{"col":"load_time","op":"TEMPORAL_RANGE","val":"No
-  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["team_name"],"metrics":["ab_points","home_runs_allowed_points","stolen_bases","walks_pitched_points"],"orderby":[["ab_points",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"2__table","viz_type":"radar","slice_id":39,"groupby":["team_name"],"metrics":["ab_points","home_runs_allowed_points","stolen_bases","walks_pitched_points"],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"load_time","operator":"TEMPORAL_RANGE","comparator":"No
+  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["team_name"],"metrics":["At Bats Points","Home Runs Allowed Points","Stolen Bases Points","Walks Pitched Points"],"orderby":[["At Bats Points",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"2__table","viz_type":"radar","slice_id":39,"groupby":["team_name"],"metrics":["At Bats Points","Home Runs Allowed Points","Stolen Bases Points","Walks Pitched Points"],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"load_time","operator":"TEMPORAL_RANGE","comparator":"No
   filter","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_3j5bujr1s8l_4wb6g8tcch3"}],"row_limit":10000,"color_scheme":"supersetColors","show_legend":true,"legendType":"scroll","legendOrientation":"top","show_labels":true,"label_type":"value","label_position":"top","number_format":"SMART_NUMBER","date_format":"smart_date","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
 cache_timeout: null
 uuid: 1066a314-8284-49ff-8b78-fac3aecd398a
