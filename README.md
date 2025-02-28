@@ -29,7 +29,7 @@ A modern data analytics platform combining MLB statistics with fantasy baseball 
 
 ### MLB Stats Pipeline
 
-Before running this project, you need to populate your Cloudflare R2 bucket with MLB statistics data using the [MLB Stats Dagster Pipeline](https://github.com/waaronmorris/mlb_stats_dagster):
+Before running this project, you need to populate your Cloudflare R2 bucket with MLB statistics data using the [MLB Stats Dagster Pipeline]([https://github.com/waaronmorris/mlb_stats_dagster](https://github.com/waaronmorris/mlb-stats-dagster)):
 
 1. Clone and set up the MLB Stats Pipeline:
    ```bash
